@@ -30,6 +30,10 @@ public class BaseballPlayer {
 				"\nTotal Games Played: " + gamesPlayed;
 	}
 	
+	public void setSwingStyle(String style) {
+		this.swingStyle = style;
+	}
+	
 	public void addHits(int h) {
 		hits += h;
 	}
@@ -45,7 +49,6 @@ public class BaseballPlayer {
 	
 	public static void main(String[] args) {
 		BaseballPlayer p = new BaseballPlayer("John", 76, "left");
-		p.swingStyle = "right";
 		p.addHits(3);
 		p.addRBIs(5);
 		p.addGamePlayed();
