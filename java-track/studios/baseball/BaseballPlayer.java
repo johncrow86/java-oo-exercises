@@ -1,3 +1,4 @@
+package baseball;
 
 public class BaseballPlayer {
 	

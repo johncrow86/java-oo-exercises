@@ -1,3 +1,4 @@
+package fraction;
 
 public class Fraction {
 
@@ -10,6 +11,14 @@ public class Fraction {
 
 	public String toString() {
 		return "Fraction is " + numerator + "/" + denominator;
+	}
+	
+	public int getNumerator() {
+		return numerator;
+	}
+	
+	public int getDenominator() {
+		return denominator;
 	}
 
 	public Fraction add(Fraction f) {
@@ -30,7 +39,7 @@ public class Fraction {
 		return new Fraction(numerator / gcd, denominator / gcd);
 	}
 
-	public int GCD(int a, int b) {
+	private int GCD(int a, int b) {
 		if (b == 0)
 			return a;
 		return GCD(b, a % b);
