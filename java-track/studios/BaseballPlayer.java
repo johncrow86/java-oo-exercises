@@ -46,6 +46,12 @@ public class BaseballPlayer {
 		gamesPlayed++;
 	}
 	
+	public void addGamePlayed(int h, int r) {
+		gamesPlayed++;
+		hits += h;
+		RBIs += r;
+	}
+	
 	
 	public static void main(String[] args) {
 		BaseballPlayer p = new BaseballPlayer("John", 76, "left");
