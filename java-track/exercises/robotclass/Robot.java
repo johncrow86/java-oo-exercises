@@ -2,10 +2,10 @@ package robotclass;
 
 public class Robot {
 
-	private String name;
-	private int[] position = new int[2]; 
-	private int speed;
-	private char direction;
+	protected String name;
+	protected int[] position = new int[2]; 
+	protected int speed;
+	protected char direction;
 	
 	public Robot(String name, int[] position, int speed, char direction) {
 		this.name = name;

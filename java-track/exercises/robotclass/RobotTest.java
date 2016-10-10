@@ -76,4 +76,32 @@ public class RobotTest {
 		Robot r3 = new Robot("robot1", position3, 2, 'N');
 		assertEquals("Distance is incorrect", r2.distance(r3), 13.892, .001);
 	}
+	
+	@Test
+	public void testBenderRobot() {
+		int[] pos = {0,0};
+		BenderRobot br = new BenderRobot("r1", pos, 1, 'N');
+		assertTrue("clamps are false(open), should not bend", br.bend() == false);
+		br.useClamps();
+		assertTrue("problem switching clamps to true(closed)", br.clamps == true);
+		br.bend();
+		assertTrue("problem switching bend to true", br.bend() == true);
+		br.useClamps();
+		assertTrue("problem switching clamps to false(open)", br.clamps == false);
+	}
+	
+	@Test
+	public void testDanceRobot() {
+		int[] pos = {0,0};
+		DanceRobot dr = new DanceRobot("r1", pos, 1, 'N');
+		dr.bustAMove(10);
+		assertTrue("problem busting 10 moves", dr.movesBusted == 10);
+		dr.inspireANation();
+		assertTrue("dance should not inspire do to prerequs", dr.nationWideDanceInspired == false);
+		dr.bustAMove(90);
+		assertTrue("dance should not inspire do style", dr.nationWideDanceInspired == false);
+		dr.setStyle("robot");
+		dr.inspireANation();
+		assertTrue("problem inspiring dance", dr.nationWideDanceInspired == true);
+	}
 }
