@@ -34,7 +34,7 @@ public class Course {
 		// check if in class
 		for (int i = 0; i < roster.length; i++){
 			if (roster[i] != null) {
-				if (roster[i].getName() == s.getName())
+				if (roster[i].getName().equals(s.getName()))
 					return false;
 			}
 		}
