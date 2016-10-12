@@ -40,4 +40,10 @@ public class DanceRobot extends Robot {
 				direction + " - Style: " + style + " - National Inspiration: " +
 				nationWideDanceInspired;
 	}
+	
+	//interface options
+	public void doNextMove() {
+		this.bustAMove(1);
+		this.inspireANation();
+	}
 }

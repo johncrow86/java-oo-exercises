@@ -1,6 +1,6 @@
 package robotclass;
 
-public class Robot {
+public class Robot implements RobotInterface {
 
 	protected String name;
 	protected int[] position = new int[2]; 
@@ -75,6 +75,11 @@ public class Robot {
 		double deltaY = r1.getYcoord() - this.getYcoord();
 		double deltaX = r1.getXcoord() - this.getXcoord();
 		return Math.abs( Math.sqrt( Math.pow(deltaY, 2) + Math.pow(deltaX, 2)) );
+	}
+	
+	//interface options
+	public void doNextMove() {
+		//overwritten in specific robots
 	}
 	
 	public String toString() {

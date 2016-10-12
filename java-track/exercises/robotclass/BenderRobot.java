@@ -38,9 +38,21 @@ public class BenderRobot extends Robot {
 		return s;
 	}
 	
+	//interface options
+	public void doNextMove() {
+		if (!clamps)
+			useClamps();
+		bend();
+		useClamps();
+	}
+	
 	public static void main(String args[]) {
 		int[] pos = {0,0};
 		BenderRobot br = new BenderRobot("r1", pos, 1, 'N');
+		System.out.println(br);
+		br.useClamps();
+		System.out.println(br);
+		br.doNextMove();
 		System.out.println(br);
 	}
 }
