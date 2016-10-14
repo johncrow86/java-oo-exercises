@@ -42,6 +42,18 @@ public class RobotTest {
 	}
 	
 	@Test
+	public void testRotate() {
+		int[] position = {0, 0};
+		Robot r1 = new Robot("robot1", position, 2, 'N');
+		try {
+			r1.rotate("front");
+			fail("Should not rotate");
+		} catch(IllegalArgumentException e) {
+			System.out.println("argument caught");
+			assertTrue(true);
+		}
+	}
+	@Test
 	public void testRotateLeft() {
 		int[] position = {0, 0};
 		Robot r1 = new Robot("robot1", position, 2, 'N');

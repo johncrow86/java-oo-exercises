@@ -51,8 +51,6 @@ public class Robot implements RobotInterface {
 			position[0] = position[0] + speed;
 		else if (direction == 'W')
 			position[0] = position[0] - speed;
-		else
-			return;
 	}
 	
 	public void rotate(String newDirection) {
@@ -66,9 +64,8 @@ public class Robot implements RobotInterface {
 			else if (direction == 'S') direction = 'W';
 			else if (direction == 'E') direction = 'S';
 			else if (direction == 'W') direction = 'N';
-		} else {
-			return;
-		}
+		} else
+			throw new IllegalArgumentException("Can only rotate left or right");
 	}
 	
 	public double distance(Robot r1) {
@@ -84,6 +81,14 @@ public class Robot implements RobotInterface {
 	
 	public String toString() {
 		return "Name: " + name + " - Position: " + position[0] + "," + position[1] + " - Speed: " + speed + " - Direction: " + direction;
+	}
+	
+	public static void main (String[] args) {
+		int[] pos = {2,0};
+		Robot r = new Robot("this", pos, 5, 'N');
+		System.out.println(r);
+		r.rotate("left");
+		System.out.println(r);
 	}
 	
 }
