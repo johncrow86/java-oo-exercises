@@ -11,6 +11,8 @@ public class Robot implements RobotInterface {
 		this.name = name;
 		this.position = position;
 		this.speed = speed;
+		if (direction != 'N' && direction != 'S' && direction != 'W' && direction != 'E')
+			throw new IllegalArgumentException("Invalid direction");
 		this.direction = direction;
 	}
 	
