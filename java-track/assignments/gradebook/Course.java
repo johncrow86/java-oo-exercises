@@ -7,11 +7,16 @@ public class Course {
 	private int seatsRemain;
 	private Student[] roster;
 	
+	private static int numCourses;
+	private static int numCredits;
+	
 	public Course (String name, int credits, int seatsRemain) {
 		this.name = name;
 		this.credits = credits;
 		this.seatsRemain = seatsRemain;
 		this.roster = new Student[seatsRemain];
+		numCourses++;
+		numCredits += credits;
 	}
 	
 	public String toString() {
@@ -28,6 +33,18 @@ public class Course {
 	
 	public int getRemainingSeats() {
 		return seatsRemain;
+	}
+	
+	public static int getNumCourses() {
+		return numCourses;
+	}
+	
+	public static int getNumCredits() {
+		return numCredits;
+	}
+	
+	public static double avgCreditPerCourse() {
+		return (double)numCredits/(double)numCourses;
 	}
 
 	public boolean addStudent(Student s) {

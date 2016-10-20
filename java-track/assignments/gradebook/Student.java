@@ -10,12 +10,15 @@ public class Student {
 	private int credits;
 	private double GPA;
 	
+	private static int numStudents;
+	
 	public Student(String first, String last, int ID, int credits, double GPA) {
 		this.nameFirst = first;
 		this.nameLast = last;
 		this.studentID = ID;
 		this.credits = credits;
 		this.GPA = GPA;
+		numStudents++;
 	}
 	
 	public Student(String first, String last, int ID) {
@@ -50,6 +53,10 @@ public class Student {
 		if (credits < 90)
 			return "Junior";
 		return "Senior";
+	}
+	
+	public static int getNumStudents() {
+		return numStudents;
 	}
 	
 	public void submitGrade(double grade, int credits) {

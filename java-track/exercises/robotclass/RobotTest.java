@@ -49,8 +49,8 @@ public class RobotTest {
 			r1.rotate("front");
 			fail("Should not rotate");
 		} catch(IllegalArgumentException e) {
-			System.out.println("argument caught");
-			assertTrue(true);
+			System.out.println("Argument caught");
+			assertTrue("Argument caught", true);
 		}
 	}
 	@Test
