@@ -1,5 +1,7 @@
 package gradebook;
 
+import java.util.Objects;
+
 public class Course {
 	
 	private String name;
@@ -21,6 +23,29 @@ public class Course {
 	
 	public String toString() {
 		return "Name: " + name + " - Credits: " + credits;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		
+	    // self check
+	    if (this == o)
+	        return true;
+	    
+	    // null check
+	    if (o == null)
+	        return false;
+	    
+	    // type check and cast
+	    if (!(o instanceof Course))
+	        return false;
+	    
+	    Course c = (Course) o;
+	    
+	    // field comparison
+	    return Objects.equals(name, c.name) &&
+	    		Objects.equals(credits, c.credits) &&
+	    		Objects.equals(generateRoster(), c.generateRoster());
 	}
 	
 	public String getName() {

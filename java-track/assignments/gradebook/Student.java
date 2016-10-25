@@ -1,6 +1,9 @@
 package gradebook;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
+
+import blogz.Entity;
 
 public class Student {
 	
@@ -27,6 +30,27 @@ public class Student {
 	
 	public String toString() {
 		return "Name: " + nameFirst + " " + nameLast + " - Student ID: " + studentID;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		
+	    // self check
+	    if (this == o)
+	        return true;
+	    
+	    // null check
+	    if (o == null)
+	        return false;
+	    
+	    // type check and cast
+	    if (!(o instanceof Student))
+	        return false;
+	    
+	    Student s = (Student) o;
+	    
+	    // field comparison
+	    return Objects.equals(studentID, s.studentID);
 	}
 
 	public String getName() {
