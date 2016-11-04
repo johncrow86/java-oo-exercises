@@ -35,6 +35,7 @@ public class Javagram {
 				*/
 				
 				imagePath = (dir + "\\" + relPath);
+				imagePath = dir + File.separator + relPath;
 				
 				picture = new Picture(imagePath);
 				
